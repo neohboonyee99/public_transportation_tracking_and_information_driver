@@ -1,4 +1,4 @@
-package com.example.public_transportation_driver_applicaiton.Retrofit;
+package com.example.public_transportation_driver_application.Retrofit;
 
 import com.google.gson.JsonObject;
 import com.google.gson.annotations.SerializedName;
@@ -18,7 +18,7 @@ import retrofit2.http.Part;
 import retrofit2.http.Query;
 
 public interface ServerService {
-    String BASE_URL = "https://192.168.42.145/fyp/public_transportation_tracking_and_information/";
+    String BASE_URL = "http://192.168.0.101/fyp/public_transportation_tracking_and_information/";
 
     @POST("loginDriver.php")
     @FormUrlEncoded
@@ -53,4 +53,12 @@ public interface ServerService {
             @Field("plateNumber") String plateNumber,
             @Field("latitude") double latitude,
             @Field("longitude") double longitude);
+
+    @POST("updateBusStop.php")
+    @FormUrlEncoded
+    Call<JsonObject> updateBusStop(
+            @Field("plateNumber") String plateNumber,
+            @Field("currentBusStop") String currentBusStop,
+            @Field("nextStop") String nextStop
+    );
 }

@@ -1,4 +1,4 @@
-package com.example.public_transportation_driver_applicaiton;
+package com.example.public_transportation_driver_application;
 
 import android.content.Context;
 

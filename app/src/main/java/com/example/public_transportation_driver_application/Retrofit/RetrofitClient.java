@@ -1,4 +1,4 @@
-package com.example.public_transportation_driver_applicaiton.Retrofit;
+package com.example.public_transportation_driver_application.Retrofit;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
