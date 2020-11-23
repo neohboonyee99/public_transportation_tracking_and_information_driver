@@ -79,6 +79,7 @@ public class MainActivity extends AppCompatActivity implements  LocationListener
                 startBackSwitch.setClickable(false);
                 logoutBtn.setClickable(false);
                 nextStopBtn.setClickable(true);
+                nextStopBtn.setEnabled(true);
 
                 Call<JsonObject> startOperation = serverService.createBus(routeNumber,plateNumber,latitude,longitude,journey);
                 startOperation.enqueue(new Callback<JsonObject>() {
@@ -213,7 +214,7 @@ public class MainActivity extends AppCompatActivity implements  LocationListener
         boolean isGPSEnabled = mLocationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
         boolean isNetworkEnabled = mLocationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
 
-        if (ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+        if (ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat   .checkSelfPermission(MainActivity.this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             this.requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, LOCATION_REQUEST);
         }
         else{
